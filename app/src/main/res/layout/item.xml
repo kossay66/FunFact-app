@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="350dp"
+    android:layout_gravity="center"
+    android:background="@mipmap/card"
+    android:layout_marginHorizontal="30dp">
+
+    <TextView
+        android:id="@+id/data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginVertical="20dp"
+        android:gravity="center"
+        android:text="test"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+</FrameLayout>
