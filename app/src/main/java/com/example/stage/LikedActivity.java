@@ -21,6 +21,7 @@ public class LikedActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     recyclerAdapter adapter;
     private ArrayList<Fact> facts;
+    SessionManagment sessionManagment;
 
 
     @Override
@@ -28,12 +29,18 @@ public class LikedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liked);
         recyclerView = findViewById(R.id.recyclerview);
-        SessionManagment sessionManagment = new SessionManagment(LikedActivity.this);
+        sessionManagment = new SessionManagment(LikedActivity.this);
 
         facts = new ArrayList<>();
         getData(sessionManagment);
         setAdapter();
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        getData(sessionManagment);
     }
 
     private void setAdapter() {

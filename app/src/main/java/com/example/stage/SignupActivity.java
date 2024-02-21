@@ -45,7 +45,8 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private Boolean checkParams() {
-        if (username.getText().toString().isEmpty() || email.getText().toString().isEmpty() || password.getText().toString().isEmpty() || confpassword.getText().toString().isEmpty()) {
+        if (username.getText().toString().isEmpty() || email.getText().toString().isEmpty() || password.getText().toString().isEmpty()
+                || confpassword.getText().toString().isEmpty()) {
             Toast.makeText(this, "no empty inputs please", Toast.LENGTH_SHORT).show();
             return false;
         } else if (password.getText().toString().length() < 6) {

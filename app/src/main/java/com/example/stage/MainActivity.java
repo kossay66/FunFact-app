@@ -61,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
         liked = findViewById(R.id.likedbtn);
         logout = findViewById(R.id.logoutbtn);
 
-        open.setOnClickListener(v -> {
-            onOpenCliked();
-        });
+        open.setOnClickListener(v ->
+            onOpenCliked()
+        );
         liked.setOnClickListener(v -> {
             Toast.makeText(this, "like pressed", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(MainActivity.this,LikedActivity.class));
@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         getData();
+
         arrayAdapter = new ArrayAdapter<>(MainActivity.this, R.layout.item, R.id.data, data);
         flingAdapterView.setAdapter(arrayAdapter);
         flingAdapterView.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
@@ -87,11 +88,14 @@ public class MainActivity extends AppCompatActivity {
                 data.remove(0);
 
                 Log.i("data", String.valueOf(data.size()));
-                if (data.size() < 2) {
-                    getData();
 
-                }
+//                if (data.size() < 2) {
+//                    getData();
+//
+//                }
                 arrayAdapter.notifyDataSetChanged();
+
+
             }
 
             @Override
@@ -109,11 +113,18 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAdapterAboutToEmpty(int i) {
+                if (i < 5) {
+                    getData();
 
+                }
+                arrayAdapter.notifyDataSetChanged();
+
+                //kjjjnjnjn
             }
 
             @Override
             public void onScroll(float v) {
+                // comment explaining why the method is empty
 
             }
         });

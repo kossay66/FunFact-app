@@ -45,9 +45,8 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
 
-                    Toast.makeText(LoginActivity.this, "55555", Toast.LENGTH_SHORT).show();
-                    Log.i("res", response.body().userID.toString());
-                    login(response.body().userID.toString());
+                    Log.i("res", response.body().userID);
+                    login(response.body().userID);
 
                 }
 
